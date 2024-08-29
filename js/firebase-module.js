@@ -269,7 +269,7 @@ if (document.getElementById("send-message-contact") !== null){
                 }
                 else{
                     messages.push(document.getElementById("message").value);
-                    set(ref(db, 'emails/'),messages);
+                    set(ref(db, 'messages/'),messages);
                 }
             });
             window.alert("Thank you for contacting us!")
