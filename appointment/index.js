@@ -68,19 +68,8 @@ function showCalendar(){
 
     dates.forEach(function(date){
         date.addEventListener("click", function(){
-            console.log(currentMont, currentDate.getMonth, this.innerHTML);
-            if (currentMonth < currentDate.getMonth()){
-                document.getElementById("calendar-alert").style.display = "inline-block";
-                setTimeout(() => document.getElementById("calendar-alert").style.display = "none", 10000);
-            }
-            else if(currentMonth == currentDate.getMonth()-1 && this.innerHTML <= currentDate.getDate(){
-                document.getElementById("calendar-alert").style.display = "inline-block";
-                setTimeout(() => document.getElementById("calendar-alert").style.display = "none", 10000);
-            }
-            else{
-                selectedDate = this.innerHTML;
-                showCalendar();
-            }
+            selectedDate = this.innerHTML;
+            showCalendar();
         });
     });
 }
