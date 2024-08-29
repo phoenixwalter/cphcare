@@ -1,0 +1,48 @@
+body{
+    background-image: url(../assets/background1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 50px;
+}
+.card{
+    background-color: rgba(12,119,91, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    color: white;
+    padding: 10% 20px;
+    border: none;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+}
+.col-lg-4{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 20px;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    padding-top: 20px;
+}
+.card img{
+    border-radius: 10px;
+}
+.body a{
+    color: white;
+}
+.body p{
+    color: white;
+}
+.outer-container{
+    padding: 30px;
+}
+.additional-reference{
+    padding: 20px;
+    background-color: rgba(12,119,91, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
