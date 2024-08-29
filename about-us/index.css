@@ -1,0 +1,108 @@
+body{
+    background-image: url(../assets/background1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.about-us-section {
+    padding: 60px 0;
+}
+.hero-section{
+    background-color: rgba(12,119,91, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+.hero-section .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6%;
+}
+.hero-section .content h1{
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+}
+.hero-section .image{
+    display: flex;
+    align-items: top;
+    justify-content: right;
+    padding-right: 10%;
+}
+.hero-section .image .img{
+    transform: rotate(60deg);
+    width: 300px;
+    height: 300px;
+    border-radius: 20%;
+    position: relative;
+    overflow: hidden;
+}
+.hero-section .image .img::before{
+    content: "";
+    position: absolute;
+    left: -15%;
+    right: -15%;
+    top: -15%;
+    bottom: -15%;
+    background-image: url(../assets/aboutUsImage.jpg);
+    background-size: cover;
+    transform: rotate(-60deg);
+}
+.about-us-section .card-container{
+    display: flex;
+    align-items: space-between;
+    justify-content: center;
+}
+.about-us-section .card {
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 20px; 
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+}
+.about-us-section .card:hover{
+    scale: 1.08;
+    box-shadow: 0px 0px 10px black;
+}
+.about-us-section .card img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    margin: 20px 0;
+}
+.about-us-section .card-title {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+.about-us-section .card-text {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+.about-us-section .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+.about-us-section .social-icons a:hover {
+    color: #63c8b9;
+}
+.extra-info-section {
+    padding: 60px 0;
+}
+.extra-info-section h2 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+.extra-info-section p {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
