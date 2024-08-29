@@ -299,8 +299,8 @@ document.getElementById("send-message").addEventListener('click', (e) => {
             });
             let chat = document.getElementById("message-container");
             chat.scrollTop = chat.scrollHeight;
-            setTimeout(() => document.getElementById("msg-input").value = '', 1000);
-            setTimeout(renderMessages, 1000);        
+            setTimeout(() => document.getElementById("msg-input").value = '', 3000);
+            setTimeout(renderMessages, 3000);        
         }
     }
     // fix = update the whole user object
@@ -369,6 +369,6 @@ function updateLocalStorage(){
         localStorage.setItem('?haveAppointment', "false");
     }    
 }
-setInterval(updateLocalStorage, 100);
+setInterval(updateLocalStorage, 1000);
 let chat = document.getElementById("message-container");
 chat.scrollTop = chat.scrollHeight;
