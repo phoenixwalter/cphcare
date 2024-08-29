@@ -72,7 +72,7 @@ function showCalendar(){
                 document.getElementById("calendar-alert").style.display = "inline-block";
                 setTimeout(() => document.getElementById("calendar-alert").style.display = "none", 10000);
             }
-            else if(currentMonth == currentDate.getMonth() && this.innerHTML <= currentDate.getDate(){
+            else if(currentMonth == currentDate.getMonth()-1 && this.innerHTML <= currentDate.getDate(){
                 document.getElementById("calendar-alert").style.display = "inline-block";
                 setTimeout(() => document.getElementById("calendar-alert").style.display = "none", 10000);
             }
