@@ -1,0 +1,82 @@
+body{
+    background-image: url(../assets/background1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.hero-section{
+    background-color: rgba(12,119,91, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 0px!important;
+}
+.hero-section .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6%;
+}
+.hero-section .content h1{
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+}
+.hero-section .image{
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    padding-left: 10px;
+    background-color: rgba(12,119,91, 0.5);
+    justify-content: end;
+}
+.hero-section .img{
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-image: url(../assets/telehealthServices.jpg);
+    background-size: cover;
+    width: 97%;
+    height: 100%;
+}
+.outer-container{
+    padding: 5%;
+}
+.body-section{
+    background-color: rgba(12,119,91, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 50px 20px;
+    color: white;
+    margin-bottom: 30px;
+}
+.services-section .card{
+    background-color: rgba(12,119,91, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    color: white;
+    padding: 10% 20px;
+    border: none;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+}
+.services-section .col-lg-4{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 20px;
+}
+.services-section .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    padding-top: 20px;
+}
+.services-section .card:hover{
+    scale: 1.1;
+}
+.services-section{
+    margin-top: 50px;
+}
+.services-section h1, .services-section h5{
+    color: white;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+.services-section .card img{
+    border-radius: 10px;
+}

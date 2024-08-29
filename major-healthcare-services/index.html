@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Major Healthcare Services</title>
+    <link rel="icon" type="image/x-icon" href="../assets/logo-favicon.png">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!--Local CSS-->
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top navigation d-flex">
+        <a class="navbar-brand" href="../home/"><img src="../assets/logo-lg.png" alt="fileFailedToLoad" class="nav-logo"></a>
+        <button class="nav-toggler btn nav-btn btn-outline-light ms-auto me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navigationBar" aria-controls="navigationBar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""><i class="bi bi-list"></i></span>
+        </button>
+        <div class="offcanvas offcanvas-start" id="navigationBar">
+            <div class="offcanvas-header w-100">
+                <a class="navbar-brand" href="../home/"><img src="../assets/logo-lg.png" alt="fileFailedToLoad" class="nav-logo"></a>
+                <button type="button" class="offcanvas-toggler nav-btn btn btn-outline-light" data-bs-dismiss="offcanvas"><i class="bi bi-x"></i></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../home/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../telehealth-services/">Teleheath Services</a></li>
+                            <li><a class="dropdown-item" href="../appointment/">Online Appointments</a></li>
+                            <li><a class="dropdown-item" href="../major-healthcare-services/">Major Healthcare Services</a></li>
+                            <li><a class="dropdown-item" href="../services/">See all services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../common-illness/" >Common Illness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about-us/">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact/">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="../appointment/"><button class="nav-item btn btn-outline-light nav-btn me-2" type="button"><i class="bi bi-calendar-plus"></i></button></a>
+        <button class="nav-item btn btn-outline-light nav-btn nav-btn-account" type="button" data-bs-toggle="modal" data-bs-target="#logInForm" id="logIn-btn"><i class="bi bi-person-fill me-1"></i>Log In</button>
+        <div class="dropdown">
+            <button class="nav-item btn btn-outline-light nav-btn nav-btn-account hide dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="logOut-btn"><i class="bi bi-person-fill me-1"></i><span id="username"></span></button>
+            <ul class="dropdown-menu dropdown-menu-end mt-3">
+                <li class="dropdown-item" id="logOut">Logout <i class="bi bi-box-arrow-right ms-1"></i></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Log In Form-->
+    <div class="modal fade col-lg-6 col-md-8 col-sm-10 account-form" tabindex="-1" id="logInForm">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header pb-2">
+                    <h1 class="m-0">Welcome Back to CHP Care!</h1>
+                    <button type="button" class="offcanvas-toggler nav-btn btn btn-outline-light" data-bs-dismiss="modal" data-bs-target="#logInForm"><i class="bi bi-x"></i></button>
+                </div>
+                <hr>
+                <div class="modal-body">
+                    <form>
+                        <legend class="w-100 text-center text-light">Log In</legend>
+                        <div class="mb-3 input-group" id="logIn-name-c">
+                            <label for="logIn-name" class="input-group-text"><i class="bi bi-at"></i></label>
+                            <input type="text" class="form-control logIn-input" id="logIn-name" placeholder="username">
+                            <span id="logIn-nameErr" class="form-err"></span>
+                        </div>
+                        <div class="mb-4 input-group" id="logIn-password-c">
+                            <label for="logIn-passord" class="input-group-text"><i class="bi bi-lock-fill"></i></label>
+                            <input type="password" class="form-control logIn-input" id="logIn-password" placeholder="password">
+                            <span id="logIn-passwordErr" class="form-err"></span>
+                        </div>
+                        <button type="submit" class="btn submit-btn btn-outline-light" id="logIn">Log In</button>
+                    </form>
+                    <span class="alert mt-4" id="logIn-Err">Error!<br>Username or Password is incorrect.</span>
+                </div>
+                <hr>
+                <div class="modal-footer">
+                    <p>Do not have an account yet? <a href="#signUpForm" data-bs-toggle="modal">Sign up here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Sign Up Form-->
+    <div class="modal fade col-lg-6 col-md-8 col-sm-10 account-form" tabindex="-1" id="signUpForm">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header pb-2">
+                    <h1 class="m-0">Welcome to CHP Care!</h1>
+                    <button type="button" class="offcanvas-toggler nav-btn btn btn-outline-light" data-bs-dismiss="modal" data-bs-target="#signUpForm"><i class="bi bi-x"></i></button>
+                </div>
+                <hr>
+                 <div class="modal-body">
+                    <form action="#" novalidate>
+                        <legend class="w-100 text-center text-light">Sign up</legend>
+                        <div class="mb-3 input-group" id="signUp-name-c">
+                            <label for="signUp-name" class="input-group-text"><i class="bi bi-at"></i></label>
+                            <input type="text" class="form-control signUp-input" id="signUp-name" placeholder="username">
+                            <span id="signUp-nameErr" class="form-err"></span>
+                        </div>
+                        <div class="mb-3 input-group" id="signUp-email-c">
+                            <label for="signUp-email" class="input-group-text"><i class="bi bi-envelope"></i></label>
+                            <input type="email" class="form-control signUp-input" id="signUp-email" placeholder="email">
+                            <span id="signUp-emailErr" class="form-err"></span>
+                        </div>
+                        <div class="mb-3 input-group" id="signUp-password-c">
+                            <label for="signUp-passord" class="input-group-text"><i class="bi bi-lock-fill"></i></label>
+                            <input type="password" class="form-control signUp-input" id="signUp-password" placeholder="password">
+                            <span id="signUp-passwordErr" class="form-err"></span>
+                        </div>
+                        <div class="mb-4 input-group" id="signUp-passwordConfirm-c">
+                            <label for="signUp-passord-confirm" class="input-group-text"><i class="bi bi-key-fill"></i></label>
+                            <input type="password" class="form-control signUp-input" id="signUp-passwordConfirm" placeholder="confirm password">
+                            <span id="signUp-passwordConfirmErr" class="form-err"></span>
+                        </div>
+                        <button type="submit" class="btn submit-btn btn-outline-light" id="signUp">Sign Up</button>
+                    </form>
+                </div>
+                <hr>
+                <div class="modal-footer">
+                    <p>Already have an account? <a href="#logInForm" data-bs-toggle="modal">Log in here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Message Section-->
+    <div class="message-box">
+        <button class="btn message-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#messages" aria-controls="offcanvasRight"><i class="bi bi-chat-fill"></i></button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="messages" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header w-100">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Talk to our specialists</h5>
+                <button type="button" class="offcanvas-toggler nav-btn btn btn-outline-light" data-bs-dismiss="offcanvas"><i class="bi bi-x"></i></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="messages" id="message-container">
+                    <span class="message-notice mt-auto" id="msg-notice">Start talking to our top specialists about your health.<br>You will receive a reply in less than 24 hours.<br>This function requires an account.</span>
+                </ul>
+                <span class="alert" id="msg-alert">An active account is required for this function!</span>
+                <form class="message-textbox">
+                    <input type="text" placeholder="message" class="form-control" id="msg-input">
+                    <button class="btn send-message" id="send-message"><i class="bi bi-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>    
+    </div>
+    <!--END OF IMPORTANT-->
+
+    <!--Body Section-->
+    <!--Hero Section-->
+    <div class="text-center text-light mb-5 hero-section row w-100 me-0">
+        <div class="col-md-6 col-lg-7 content">
+            <div class="text-start">
+                <h1>Major Heathcare Services</h1>
+                <p>Our healthcare facility ensure that we meet the highest standards of care and safety. This accreditation reflects our commitment to providing quality and reliable medical services to our patients.</p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-5 image d-none d-lg-flex d-md-flex p-0">
+            <div class="img"></div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-section">
+        <h1>We Provide Excepitional Healthcare For Diseases Listed Below</h1>
+        <div class="row w-100 m-0">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="../assets/Cardiovascular Diseases.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">Cardiovascular Diseases</h5>
+                        <p class="card-text">Includes heart attacks, hypertension, and other cardiovascular conditions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="../assets/Respiratory disorders.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">Respiratory Disorders</h5>
+                        <p class="card-text">Includes asthma, pneumonia, and other respiratory conditions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="../assets/Diabetes.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">Diabetes</h5>
+                        <p class="card-text">Includes Type 1 and Type 2 diabetes management and care.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="../assets/infections.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">Infections</h5>
+                        <p class="card-text">Includes flu, bacterial infections, and other common infections.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="../assets/Orthopedic Issues.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">Orthopedic Issues</h5>
+                        <p class="card-text">Includes fractures, arthritis, and other orthopedic problems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="../assets/Gastrointestinal problems.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">Gastrointestinal Problems</h5>
+                        <p class="card-text">Includes ulcers, IBS, and other gastrointestinal issues.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="../assets/Neurological disorders.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">Neurological Disorders</h5>
+                        <p class="card-text">Includes migraines, seizures, and other neurological conditions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="../assets/cancer.jfif" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">Cancer</h5>
+                        <p class="card-text">Includes breast, lung, colon cancers, and other types of cancer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of Body Section-->
+
+    <!--Footer Section-->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#2e797e" fill-opacity="0.9" d="M0,128L48,122.7C96,117,192,107,288,112C384,117,480,139,576,165.3C672,192,768,224,864,218.7C960,213,1056,171,1152,154.7C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    <!-- Footer Section -->
+    <footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="inner-container">
+                <!-- Brand and Logo -->
+                <div class="section">
+                    <a href="#" class="d-inline-block mb-3">
+                        <img src="../assets/logo-lg.png" alt="fileFailedToLoad" class="img-fluid" style="max-height: 60px;">
+                    </a>
+                    <p>Your trusted partner in healthcare industry.</p>
+                    <form action="#" class="comment" onsubmit="window.alert('Thank you for your feedback!');">
+                        <legend class="text-light">Leave a quick comment!</legend>
+                        <div class="d-flex">
+                            <input type="text" class="form-control" required>
+                            <button type="submit" class="btn white-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <hr class="hr">
+
+                <!-- Contact Us -->
+                <div class="section contact-section">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> <div>622 3rd Ave SW Pipestone, Minnesota(MN), 56164</div></li>
+                        <li><i class="bi bi-telephone"></i> <div>95 9792423544<br>95 9752277811</div></li>
+                        <li><i class="bi bi-envelope"></i> <div class="w-auto">cphcare.global@gmail.com</div></li>
+                     </ul>
+                </div>
+                <hr class="hr">
+
+                <!-- Quick Links -->
+                <div class="section">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../home/">Home</a></li>
+                        <li><a href="#servicesDropdown" data-bs-toggle="collapse">Services</a></li>
+                            <ul class="collapse ms-md-3 ms-0" id="servicesDropdown">
+                                <li class="mb-0"><a href="../telehealth-services/">Telehealth Services</a></li>
+                                <li class="mb-0"><a href="../appointment/">Online Appointments</a></li>
+                                <li class="mb-0"><a href="../major-healthcare-services/">Major Healthcare Services</a></li>
+                                <li><a href="../services/">See All...</a></li>
+                            </ul>
+                        <li><a href="#illnessDropdown" data-bs-toggle="collapse">Common Illness</a></li>
+                            <ul class="collapse ms-md-3 ms-0" id="illnessDropdown">
+                                <li class="mb-0"><a href="../common-illness/#commonCold">Common Cold</a></li>
+                                <li class="mb-0"><a href="../common-illness/#flu">Influenza</a></li>
+                                <li class="mb-0"><a href="../common-illness/#headache">Headache</a></li>
+                                <li class="mb-0"><a href="../common-illness/#soreThroat">Sore Throat</a></li>
+                                <li><a href="../common-illness/#stomachAche">Stomach Ache</a></li>
+                                <li><a href="../common-illness/">See More...</a></li>
+                            </ul>
+                        <li><a href="../about-us/">About Us</a></li>
+                        <li><a href="../contact/">Contact</a></li>
+                        <li><a href="../references/">References</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="col-md-12">
+            </div>
+            <hr>
+            <div class="col-md-12 text-center">
+                <p>&#169; Copyright 2024 www.cphcare.com. All rights reserved. Developed by CPHCare.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="../js/firebase-module.js "></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>
