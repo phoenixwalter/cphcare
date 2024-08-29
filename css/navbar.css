@@ -1,0 +1,409 @@
+/*NAVIGATION BAR*/
+/*navigation style & spacing*/
+.navigation{
+    backdrop-filter: blur(3px);
+    background-color: rgba(19, 58, 58, 0.4)!important;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    padding: 0;
+}
+.navigation .navbar-brand{
+    margin-right: 3%;
+}
+.navigation .nav-logo{
+    height: 47px;
+    padding: 8px 0px;
+}
+.navigation{
+    padding: 0px 3%;
+}
+.navigation li{
+    padding: 8px 13px;
+}
+.navigation li a{
+    color: rgb(234, 234, 234)!important;
+}
+.navigation .dropdown-menu{
+    backdrop-filter: blur(3px)!important;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(19, 56, 58, 0.4)!important;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    padding: 0px!important;
+    overflow: hidden;
+}
+.navigation .dropdown-item{
+    color: white;
+}
+.navigation .nav-toggler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navigation .offcanvas{
+    height: 100vh;
+    background-color: rgba(15, 109, 84, 0.8);
+    width: 300px;
+    border: none;
+}
+.navigation .offcanvas *{
+    color: white;
+}
+.navigation .offcanvas-header{
+    align-items: center;
+    justify-content: space-between;
+}
+/*navigation hover effects*/
+.navigation li{
+    position: relative;
+}
+.navigation li::after{
+    content: '';
+    position: absolute;
+    left: 50%; bottom: 0; right: 50%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+
+    transition-property: left, right;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.navigation li:hover::after{
+    left: 0; right: 0;
+}
+.nav-item.active::after{
+    left: 0; right: 0;
+}
+.navigation .dropdown-menu li::after{
+    display: none;
+}
+.navigation .dropdown-menu li:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.navigation .dropdown-menu a{
+    background-color: transparent!important;
+}
+.nav-btn{
+    transition-property: all;
+    transition-timing-function: ease-out;
+    transition-duration: 0.2s;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.nav-btn:hover{
+    background-color: transparent;
+    color: white;
+    scale: 1.03;
+}
+.nav-btn:active{
+    transition: none;
+    background-color: transparent!important;
+    color: white!important;
+    scale: 0.9;
+}
+.nav-btn.active{
+    background-color: white!important;
+    color: black;
+}
+.nav-btn-account{
+    width: auto!important;
+    border-radius: 20px;
+}
+.hide{
+    display: none;
+}
+/*navigation responsive*/
+.navigation .nav-toggler, .navigation .offcanvas-toggler{
+    display: none;
+}
+@media only screen and (max-width: 991px){
+    .navigation{
+        padding: 0px 25px;
+    }
+    .navigation .nav-toggler, .navigation .offcanvas-toggler{
+        display: inline-block;
+    }
+    #username, #username::after{
+        display: none;
+    }
+}
+
+/*account forms*/
+/*modal design*/
+.account-form h1, .account-form p{
+    color: white;
+    margin-bottom: 0!important;
+}
+.account-form h1{
+    font-size: 23px;
+}
+.account-form hr{
+    border-color: white;
+    border-width: 2px;
+}
+.account-form .modal-content{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(20, 201, 203, 0.2)!important;
+    backdrop-filter: blur(15px);
+    border: none;
+}
+.account-form .modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: none;
+}
+.account-form .modal-footer{
+    border-top: none!important;
+}
+.account-form a{
+    color: white;
+}
+/*form design*/
+.account-form form{
+    padding: 10px 5%;
+}
+.account-form form label{
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+.account-form form input{
+    background-color: rgba(0, 0, 0, 0.15)!important;
+    color: white!important;
+    border: 1px solid white;
+    border-start-end-radius: 7px!important;
+    border-end-end-radius: 7px!important;
+}
+.account-form form input:focus{
+    box-shadow: none;
+    border-color: rgb(20, 203, 142);
+}
+.account-form form input::placeholder{
+    color: rgba(255, 255, 255, 0.75);
+}
+.account-form form .submit-btn{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white!important;
+
+    transition-property: all;
+    transition-timing-function: ease;
+}
+.account-form form .submit-btn:hover{
+    scale: 1.07;
+    background-color: rgba(255, 255, 255, 0.11);
+}
+.account-form form .submit-btn:active{
+    scale: 0.95;
+    background-color: transparent;
+    transition: none;
+}
+.account-form .form-err{
+    color: white;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    font-size: 13px;
+    background-color: rgb(255, 94, 94);
+    padding: 0px 5px;
+    border-radius: 10px!important;
+}
+.account-form .alert{
+    background-color: rgba(255, 31, 31, 0.5);
+    border-color: rgba(255, 103, 103, 1);
+    backdrop-filter: blur(5px);
+    color: rgb(255, 153, 153);
+    
+    display: none;
+}
+
+/*message section*/
+.message-box .message-btn{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 2;
+
+    background-color: rgb(46, 121, 126);
+    border: 1px solid white;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+}
+.message-box .message-btn:hover{
+    background-color: rgba(46, 121, 126, 0.5);
+    scale: 1.1;
+}
+.message-box .message-btn:active{
+    transition: none;
+    background-color: rgba(46, 121, 126, 0.5);
+    scale: 0.95;
+    color: white!important;
+    border-color: white!important;
+}
+.message-box .offcanvas{
+    background-color: rgba(46, 121, 126, 0.8);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 0px 20px;
+    top: 10px; right: 10px; bottom: 10px;
+}
+.message-box .offcanvas-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+.message-box .offcanvas-body{
+    padding: 0;
+    height: 100%;
+}
+.message-box .messages{
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 0;
+    list-style-type: none;
+    
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 63px);
+    overflow-y: scroll!important;
+}
+.message-box .alert{
+    position: absolute;
+    left: 80px; top: 50%; right: 80px;
+    translate: 0 -50%;
+    background-color: rgba(255, 31, 31, 0.5);
+    border-color: rgba(255, 103, 103, 1);
+    backdrop-filter: blur(5px);
+    color: rgb(255, 153, 153);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+}
+
+.message-box .message-d{
+    padding-right: 10%;
+    display: flex;
+    justify-content: left;
+}
+.message-box .message-p{
+    padding-left: 10%;
+    display: flex;
+    justify-content: right;
+}
+.message-box .message-d span{
+    background-color: rgb(21, 127, 151);
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.message-box .message-p span{
+    background-color: rgb(21, 151, 118);
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.message-box .message-textbox{
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.message-box .message-textbox input{
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background-color: rgba(58, 255, 206, 0.3);
+    width: 85%;
+    margin-right: 10px;
+    color: white;
+}
+.message-box .message-textbox input::placeholder{
+    color: rgba(255, 255, 255, 0.8);
+}
+.message-box .message-textbox input:focus{
+    background-color: rgba(58, 255, 206, 0.5);
+    border: 1px solid white!important;
+    box-shadow: none!important;
+}
+.message-box .send-message{
+    background-color: rgb(21, 151, 118);
+    color: white;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.message-notice{
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/*customizations*/
+.message-box .messages{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.message-box .messages::-webkit-scrollbar{
+    display: none;
+}
+.message-box .messages::-webkit-scrollbar-button{
+    display: none;
+}
+.custom-tooltip{
+    --bs-tooltip-bg: rgb(21, 151, 118);
+    --bs-tooltip-color: white;
+    left: 50px;
+}
+html{
+    scrollbar-width: normal;
+    scrollbar-color: rgba(24, 172, 133) rgba(15, 109, 84);
+}
+::selection{
+    background-color: rgba(24, 172, 133, 0.7);
+    color: white;
+}
+.white-btn{
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid white!important;
+    color: white!important;
+    border-radius: 10px;
+
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+}
+.white-btn:hover{
+    background-color: transparent;
+    scale: 1.03;
+}
+.white-btn:active{
+    transition: none;
+    scale: 0.9;
+}
