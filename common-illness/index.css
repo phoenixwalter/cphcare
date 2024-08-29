@@ -1,0 +1,177 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(../assets/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+*{
+    font-family: "Ubuntu", sans-serif;
+}
+.hero-section{
+    margin-top: 50px;
+    padding: 50px;
+    padding-bottom: 0px;
+}
+.common-illness-section{
+    position: relative;
+    display: flex;
+}
+.common-illness-section button{
+    border: 1px solid white!important;
+    padding: 1% 20px;
+    background-color: rgba(8, 159, 101, 0.2)!important;
+    
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+}
+.common-illness-section button:hover{
+    background-color: rgba(255, 255, 255, 0.2)!important;
+}
+.common-illness-section button:active{
+    background-color: transparent!important;
+    opacity: 0.9;
+    transition: none;
+}
+.common-illness-section .collapse, .common-illness-section .collapse *{
+    background-color: transparent!important;
+}
+.common-illness-section .collapse{
+    border-radius: 10px;
+    border: 1px solid white;
+    border-start-end-radius: 0px;
+    border-start-start-radius: 0px;
+    border-top: none;
+}
+.common-illness-section .card{
+    border: none;
+    border-radius: 0px;
+}
+.common-illness-section .scroll-spy-out{
+    position: sticky;
+    top: 70px;
+    left: 0px;
+    right: 0px;
+    height: calc(100vh - 70px)!important;
+    overflow-y: scroll;
+    margin: 0;
+}
+.common-illness-section .offcanvas{
+    background-color: rgba(15, 109, 84, 0.5);
+    backdrop-filter: blur(5px);
+    color: white;
+}
+.common-illness-section .scroll-spy a{
+    color: white;
+    padding: 3px;
+    padding-left: 10px;
+    border-radius: 0px;
+    border-left: 2px solid transparent;
+    font-size: 15px;
+}
+.common-illness-section .scroll-spy .nested a{
+    padding: 0px!important;
+    padding-left: 7px!important;
+    margin-top: 2px!important;
+    margin-bottom: 2px!important;
+    font-size: 14px;
+    height: 20px;
+}
+.common-illness-section .scroll-spy .nested{
+    margin-bottom: 15px;
+}
+.common-illness-section .scroll-spy a.active{
+    background-color: transparent;
+    border-left: 2px solid white;
+}
+.common-illness-section .content{
+    color: white;
+}
+.common-illness-section .content{
+    padding: 5%;
+    padding-top: 0px;
+}
+.common-illness-section .section{
+    background-color: rgba(9, 151, 109, 0.4)!important;
+    margin-bottom: 50px;
+    padding: 5%;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+.common-illness-section h1{
+    margin-bottom: 20px;
+}
+.common-illness-section button{
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    color: white!important;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+.common-illness-section .spacer{
+    height: 15px;
+}
+.common-illness-section button:has(+ .collapse.show) {
+    border-bottom: none!important;
+    border-end-end-radius: 0px;
+    border-end-start-radius: 0px;
+}
+.common-illness-section .scroll-spy-toggler{
+    position: fixed;
+    right: 30px;
+    bottom: 90px;
+    z-index: 2;
+
+    background-color: rgb(46, 121, 126)!important;
+    border: 1px solid white;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+}
+.common-illness-section .scroll-spy-toggler:hover{
+    background-color: rgba(46, 121, 126, 0.5);
+    scale: 1.1;
+}
+.common-illness-section .scroll-spy-toggler:active{
+    transition: none;
+    background-color: rgba(46, 121, 126, 0.5);
+    scale: 0.95;
+    color: white!important;
+    border-color: white!important;
+}
+.common-illness-section .scroll-spy-toggler-in{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent!important;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+}
+.common-illness-section .scroll-spy-toggler-in:hover{
+    background-color: rgba(255, 255, 255, 0.2)!important;
+}

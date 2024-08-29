@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>-HOME-</title>
+    <link rel="icon" type="image/x-icon" href="../assets/logo-favicon.png">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!--Local CSS-->
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top navigation d-flex">
+        <a class="navbar-brand" href="../home/"><img src="../assets/logo-lg.png" alt="fileFailedToLoad" class="nav-logo"></a>
+        <button class="nav-toggler btn nav-btn btn-outline-light ms-auto me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#navigationBar" aria-controls="navigationBar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""><i class="bi bi-list"></i></span>
+        </button>
+        <div class="offcanvas offcanvas-start" id="navigationBar">
+            <div class="offcanvas-header w-100">
+                <a class="navbar-brand" href="../home/"><img src="../assets/logo-lg.png" alt="fileFailedToLoad" class="nav-logo"></a>
+                <button type="button" class="offcanvas-toggler nav-btn btn btn-outline-light" data-bs-dismiss="offcanvas"><i class="bi bi-x"></i></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../home/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../telehealth-services/">Telehealth Services</a></li>
+                            <li><a class="dropdown-item" href="../appointment/">Online Appointments</a></li>
+                            <li><a class="dropdown-item" href="../major-healthcare-services/">Major Healthcare Services</a></li>
+                            <li><a class="dropdown-item" href="../services/">See all services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../common-illness/" >Common Illness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about-us/">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact/">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="../appointment/"><button class="nav-item btn btn-outline-light nav-btn me-2" type="button"><i class="bi bi-calendar-plus"></i></button></a>
+        <button class="nav-item btn btn-outline-light nav-btn nav-btn-account" type="button" data-bs-toggle="modal" data-bs-target="#logInForm" id="logIn-btn"><i class="bi bi-person-fill me-1"></i>Log In</button>
+        <div class="dropdown">
+            <button class="nav-item btn btn-outline-light nav-btn nav-btn-account hide dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="logOut-btn"><i class="bi bi-person-fill me-1"></i><span id="username"></span></button>
+            <ul class="dropdown-menu dropdown-menu-end mt-3">
+                <li class="dropdown-item" id="logOut">Logout <i class="bi bi-box-arrow-right ms-1"></i></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Log In Form-->
+    <div class="modal fade col-lg-6 col-md-8 col-sm-10 account-form" tabindex="-1" id="logInForm">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header pb-2">
+                    <h1 class="m-0">Welcome Back to CHP Care!</h1>
+                    <button type="button" class="offcanvas-toggler nav-btn btn btn-outline-light" data-bs-dismiss="modal" data-bs-target="#logInForm"><i class="bi bi-x"></i></button>
+                </div>
+                <hr>
+                <div class="modal-body">
+                    <form>
+                        <legend class="w-100 text-center text-light">Log In</legend>
+                        <div class="mb-3 input-group" id="logIn-name-c">
+                            <label for="logIn-name" class="input-group-text"><i class="bi bi-at"></i></label>
+                            <input type="text" class="form-control logIn-input" id="logIn-name" placeholder="username">
+                            <span id="logIn-nameErr" class="form-err"></span>
+                        </div>
+                        <div class="mb-4 input-group" id="logIn-password-c">
+                            <label for="logIn-passord" class="input-group-text"><i class="bi bi-lock-fill"></i></label>
+                            <input type="password" class="form-control logIn-input" id="logIn-password" placeholder="password">
+                            <span id="logIn-passwordErr" class="form-err"></span>
+                        </div>
+                        <button type="submit" class="btn submit-btn btn-outline-light" id="logIn">Log In</button>
+                    </form>
+                    <span class="alert mt-4" id="logIn-Err">Error!<br>Username or Password is incorrect.</span>
+                </div>
+                <hr>
+                <div class="modal-footer">
+                    <p>Do not have an account yet? <a href="#signUpForm" data-bs-toggle="modal">Sign up here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Sign Up Form-->
+    <div class="modal fade col-lg-6 col-md-8 col-sm-10 account-form" tabindex="-1" id="signUpForm">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header pb-2">
+                    <h1 class="m-0">Welcome to CHP Care!</h1>
+                    <button type="button" class="offcanvas-toggler nav-btn btn btn-outline-light" data-bs-dismiss="modal" data-bs-target="#signUpForm"><i class="bi bi-x"></i></button>
+                </div>
+                <hr>
+                 <div class="modal-body">
+                    <form action="#" novalidate>
+                        <legend class="w-100 text-center text-light">Sign up</legend>
+                        <div class="mb-3 input-group" id="signUp-name-c">
+                            <label for="signUp-name" class="input-group-text"><i class="bi bi-at"></i></label>
+                            <input type="text" class="form-control signUp-input" id="signUp-name" placeholder="username">
+                            <span id="signUp-nameErr" class="form-err"></span>
+                        </div>
+                        <div class="mb-3 input-group" id="signUp-email-c">
+                            <label for="signUp-email" class="input-group-text"><i class="bi bi-envelope"></i></label>
+                            <input type="email" class="form-control signUp-input" id="signUp-email" placeholder="email">
+                            <span id="signUp-emailErr" class="form-err"></span>
+                        </div>
+                        <div class="mb-3 input-group" id="signUp-password-c">
+                            <label for="signUp-passord" class="input-group-text"><i class="bi bi-lock-fill"></i></label>
+                            <input type="password" class="form-control signUp-input" id="signUp-password" placeholder="password">
+                            <span id="signUp-passwordErr" class="form-err"></span>
+                        </div>
+                        <div class="mb-4 input-group" id="signUp-passwordConfirm-c">
+                            <label for="signUp-passord-confirm" class="input-group-text"><i class="bi bi-key-fill"></i></label>
+                            <input type="password" class="form-control signUp-input" id="signUp-passwordConfirm" placeholder="confirm password">
+                            <span id="signUp-passwordConfirmErr" class="form-err"></span>
+                        </div>
+                        <button type="submit" class="btn submit-btn btn-outline-light" id="signUp">Sign Up</button>
+                    </form>
+                </div>
+                <hr>
+                <div class="modal-footer">
+                    <p>Already have an account? <a href="#logInForm" data-bs-toggle="modal">Log in here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Message Section-->
+    <div class="message-box">
+        <button class="btn message-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#messages" aria-controls="offcanvasRight"><i class="bi bi-chat-fill"></i></button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="messages" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header w-100">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Talk to our specialists</h5>
+                <button type="button" class="offcanvas-toggler nav-btn btn btn-outline-light" data-bs-dismiss="offcanvas"><i class="bi bi-x"></i></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="messages" id="message-container">
+                    <span class="message-notice mt-auto" id="msg-notice">Start talking to our top specialists about your health.<br>You will receive a reply in less than 24 hours.<br>This function requires an account.</span>
+                </ul>
+                <span class="alert" id="msg-alert">An active account is required for this function!</span>
+                <form class="message-textbox">
+                    <input type="text" placeholder="message" class="form-control" id="msg-input">
+                    <button class="btn send-message" id="send-message"><i class="bi bi-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>    
+    </div>
+    <!--END OF IMPORTANT-->
+
+    <div class="body-section">
+        <div class="hero-section mb-5 text-white">
+            <h1>Common Illnesses</h1>
+            <p>Explore the most common minor illnesses, their causes and treatments.</p>
+        </div>
+        <div class="body-section">
+            <div class="row common-illness-section w-100">
+                <div class="col-lg-9 col-12 content" data-bs-spy="scroll">
+                    <!--Common Cold-->
+                    <div class="section" id="commonCold">
+                        <h1>Common Cold</h1>
+                        <button class="btn justify-content-between d-flex" data-bs-toggle="collapse" data-bs-target="#commonCold-def" id="commonCold-def-ss" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="commonCold-def">
+                            <div class="card card-body">
+                                <p>The common cold is an illness affecting your nose and throat. Most often, it's harmless, but it might not feel that way. Germs called viruses cause a common cold. Often, adults may have two or three colds each year. Infants and young children may have colds more often.</p>
+                                <p>Most people recover from a common cold in 7 to 10 days. Symptoms might last longer in people who smoke. Most often, you don't need medical care for a common cold. If symptoms don't get better or if they get worse, see your health care provider. Illnesses of the nose and throat caused by germs are called upper respiratory tract infections.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn btn justify-content-between d-flex" data-bs-toggle="collapse" data-bs-target="#commonCold-cau" id="commonCold-cau-ss" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="commonCold-cau">
+                            <div class="card card-body">
+                                <p>Many viruses can cause a common cold. Rhinoviruses are the most common cause.</p>
+                                <p>A cold virus enters the body through the mouth, eyes or nose. The virus can spread by:</p>
+                                <ul>
+                                    <li>Droplets in the air when someone who is sick coughs, sneezes or talks.</li>
+                                    <li>Hand-to-hand contact with someone who has a cold.</li>
+                                    <li>Sharing objects with the virus on them, such as dishes, towels, toys or telephones.</li>
+                                    <li>Touching your eyes, nose or mouth after contact with the virus.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn btn justify-content-between d-flex" data-bs-toggle="collapse" data-bs-target="#commonCold-sym" id="commonCold-sym-ss" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="commonCold-sym">
+                            <div class="card card-body">
+                                <p>Most often, common cold symptoms start 1 to 3 days after someone is exposed to a cold virus. Symptoms vary. They can include:</p>
+                                <ul>
+                                    <li>Runny or stuffy nose.</li>
+                                    <li>Sore or scratchy throat.</li>
+                                    <li>Cough.</li>
+                                    <li>Generally feeling unwell.</li>
+                                    <li>Slight body aches or a mild headache.</li>
+                                    <li>Low-grade fever.</li>
+                                </ul>
+                                <p>The mucus from your nose may start out clear and become thicker and yellow or green. This change is normal. Most often, it doesn't mean that you have a bacterial illness.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" data-bs-toggle="collapse" data-bs-target="#commonCold-tre" id="commonCold-tre-ss" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="commonCold-tre">
+                            <div class="card card-body">
+                                <p>There’s no cure for a cold. You have to let it run its course. Most colds go away on their own within seven to 10 days and don’t turn into anything more serious. Common cold treatment includes over-the-counter (OTC) medications to help reduce your symptoms and keep you comfortable until you recover.</p>
+                                <p>Unless prescribed by their provider, don’t give your baby any over-the-counter cough or cold medicines. To treat common cold in babies:</p>
+                                <ul>
+                                    <li>Keep your baby comfortable.</li>
+                                    <li>Give your baby fluids. For babies 6 months or younger, let them drink breast milk (chest milk) or formula. At 6 months, your baby can also have some water.</li>
+                                    <li>Let your baby get plenty of rest.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Flu (Influenza)-->
+                    <div class="section" id="flu">
+                        <h1>Flu (Influenza)</h1>
+                        <button class="btn justify-content-between d-flex" id="flu-def-ss" data-bs-toggle="collapse" data-bs-target="#flu-def" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="flu-def">
+                            <div class="card card-body">
+                                <p>Seasonal influenza (the flu) is an acute respiratory infection caused by influenza viruses. It is common in all parts of the world. Most people recover without treatment.</p>
+                                <p>Influenza spreads easily between people when they cough or sneeze. Vaccination is the best way to prevent the disease.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="flu-cau-ss" data-bs-toggle="collapse" data-bs-target="#flu-cau" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="flu-cau">
+                            <div class="card card-body"> 
+                                <p>The flu is caused by an influenza virus. Most people get the flu when they breathe in tiny airborne droplets from the coughs or sneezes of someone who has the flu. You can also catch the flu if you touch something with the virus on it, a
+                                    nd then touch your mouth, nose, or eyes.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="flu-sym-ss" data-bs-toggle="collapse" data-bs-target="#flu-sym" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="flu-sym">
+                            <div class="card card-body">
+                                <p>Symptoms of influenza usually begin around 2 days after being infected by someone who has the virus.
+                                </p>
+                                <p>Symptoms include:
+                                </p>
+                                <ul>
+                                    <li>sudden onset of fever</li>
+                                    <li>cough (usually dry)</li>
+                                    <li>headache</li>
+                                    <li>muscle and joint pain</li>
+                                    <li>severe malaise (feeling unwell)</li>
+                                    <li>sore throat</li>
+                                    <li>runny nose</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="flu-tre-ss" data-bs-toggle="collapse" data-bs-target="#flu-tre" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="flu-tre">
+                            <div class="card card-body">
+                                <p>Most people will recover from influenza on their own. People with severe symptoms or other medical conditions should seek medical care.</p>
+                                <p>People with mild symptoms should:</p>
+                                <ul>
+                                    <li>stay home to avoid infecting other people</li>
+                                    <li>rest</li>
+                                    <li>drink plenty of fluids</li>
+                                    <li>treat other symptoms such as fever</li>
+                                    <li>seek medical care if symptoms get worse</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--Headaches-->
+                    <div class="section" id="headache">
+                        <h1>Headaches</h1>
+                        <button class="btn justify-content-between d-flex" id="headache-def-ss" data-bs-toggle="collapse" data-bs-target="#headache-def" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="headache-def">
+                            <div class="card card-body">
+                                <p>Headaches are a very common condition that most people will experience many times during their lives. The main symptom of a headache is pain in your head or face. There are several types of headaches, and tension headaches are the most common. While most headaches aren’t dangerous, certain types can be a sign of a serious underlying condition.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="headache-cau-ss" data-bs-toggle="collapse" data-bs-target="#headache-cau" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="headache-cau">
+                            <div class="card card-body">
+                                <p>Headache pain results from signals interacting among your brain, blood vessels and surrounding nerves. During a headache, multiple mechanisms activate specific nerves that affect muscles and blood vessels. These nerves send pain signals to your brain, causing a headache.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="headache-sym-ss" data-bs-toggle="collapse" data-bs-target="#headache-sym" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="headache-sym">
+                            <div class="card card-body">
+                                <p>If you or your child has any of these headache symptoms, get medical care right away:</p>
+                                <ul>
+                                    <li>A sudden, new and severe headache.</li>
+                                    <li>Headache with a fever, shortness of breath, stiff neck or rash.</li>
+                                    <li>Headaches that occur after a head injury or accident.</li>
+                                    <li>Getting a new type of headache after age 55.</li>
+                                </ul>
+                                <p>Also seek medical care right away if your headache is associated with neurological symptoms, such as:</p>
+                                <ul>
+                                    <li>Weakness.</li>
+                                    <li>Dizziness.</li>
+                                    <li>Sudden loss of balance or falling.</li>
+                                    <li>Numbness or tingling.</li>
+                                    <li>Paralysis.</li>
+                                    <li>Speech difficulties.</li>
+                                    <li>Mental confusion.</li>
+                                    <li>Seizures.</li>
+                                    <li>Personality changes/inappropriate behavior.</li>
+                                    <li>Vision changes (blurry vision, double vision or blind spots).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="headache-tre-ss" data-bs-toggle="collapse" data-bs-target="#headache-tre" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="headache-tre">
+                            <div class="card card-body">
+                                <p>Treatment for headaches depends on the type.</p>
+                                <p>One of the most crucial aspects of treating primary headaches is figuring out your triggers. Learning what those are — typically by keeping a headache log — can reduce the number of headaches you have.</p>
+                                <p>Once you know your triggers, your healthcare provider can tailor treatment to you. For example, you may get headaches when you’re tense or worried. Counseling and stress management techniques can help you handle this trigger better. By lowering your stress level, you can avoid stress-induced headaches.</p>
+                                <p>Not every headache requires medication. A range of treatments is available. Depending on your headache type, frequency and cause, treatment options include:</p>
+                                <ul>
+                                    <li>Stress management.</li>
+                                    <li>Biofeedback.</li>
+                                    <li>Medications.</li>
+                                    <li>Treating the underlying medical condition/cause.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Sore Throat-->
+                    <div class="section" id="soreThroat">
+                        <h1>Sore Throat</h1>
+                        <button class="btn justify-content-between d-flex" id="soreThroat-def-ss" data-bs-toggle="collapse" data-bs-target="#soreThroat-def" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="soreThroat-def">
+                            <div class="card card-body">
+                                <p>A sore throat is pain, scratchiness or irritation of the throat that often worsens when you swallow. A sore throat caused by a virus resolves on its own. Strep throat (streptococcal infection), a less common type of sore throat caused by bacteria, requires treatment with antibiotics to prevent complications. Other less common causes of sore throat might require more complex treatment.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="soreThroat-cau-ss" data-bs-toggle="collapse" data-bs-target="#soreThroat-cau" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="soreThroat-cau">
+                            <div class="card card-body">
+                                <p>The most common cause of a sore throat (pharyngitis) is a viral infection, such as a cold or the flu.</p>
+                                <p>Many bacterial infections can cause a sore throat. The most common is Streptococcus pyogenes (group A streptococcus) which causes strep throat.
+                                </p>
+                                <p>Viral illnesses that cause a sore throat include:
+                                </p>
+                                <ul>
+                                    <li>Common cold</li>
+                                    <li>Flu (influenza)</li>
+                                    <li>Mono (mononucleosis)</li>
+                                    <li>Measles</li>
+                                    <li>Chickenpox</li>
+                                    <li>Coronavirus disease 2019 (COVID-19)</li>
+                                    <li>Croup — a common childhood illness characterized by a harsh, barking cough
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="soreThroat-sym-ss" data-bs-toggle="collapse" data-bs-target="#soreThroat-sym" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="soreThroat-sym">
+                            <div class="card card-body">
+                                <p>Symptoms of a sore throat can vary depending on the cause. Signs and symptoms might include:</p>
+                                <ul>
+                                    <li>Pain or a scratchy sensation in the throat</li>
+                                    <li>Pain that worsens with swallowing or talking</li>
+                                    <li>Difficulty swallowing</li>
+                                    <li>Sore, swollen glands in your neck or jaw</li>
+                                    <li>Swollen, red tonsils</li>
+                                    <li>White patches or pus on your tonsils</li>
+                                    <li>A hoarse or muffled voice</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="soreThroat-tre-ss" data-bs-toggle="collapse" data-bs-target="#soreThroat-tre" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="soreThroat-tre">
+                            <div class="card card-body">
+                                <p>A sore throat caused by a viral infection usually lasts five to seven days and doesn't usually require medical treatment. To ease pain and fever, many people turn to acetaminophen (Tylenol, others) or other mild pain relievers.</p>
+                                <p>If your or your child's sore throat is caused by a bacterial infection, your doctor or pediatrician will prescribe antibiotics. If a sore throat is a symptom of a condition other than a viral or bacterial infection, other treatments will likely be considered depending on the diagnosis.</p>
+                                <ul>
+                                    <li>Rest</li>
+                                    <li>Drink fluids</li>
+                                    <li>Try comforting foods and beverage</li>
+                                    <li>Gargle with saltwater</li>
+                                    <li>Humidify the air</li>
+                                    <li>Consider lozenges or hard candy</li>
+                                    <li>Avoid irritants</li>
+                                    <li>Stay at home until you're no longer sick</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Stomach Ache-->
+                    <div class="section" id="stomachAche">
+                        <h1>Stomach Ache</h1>
+                        <button class="btn justify-content-between d-flex" id="stomachAche-def-ss" data-bs-toggle="collapse" data-bs-target="#stomachAche-def" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="stomachAche-def">
+                            <div class="card card-body">
+                                <p>Abdominal pain is discomfort anywhere in your belly region — between your ribs and your pelvis. We often think of abdominal pain as “stomach pain” or a “stomachache,” but pain in your abdomen could be coming from other organs besides your stomach, too. Abdominal pain has many causes, some more serious than others. What feels like a stomachache may be coming from another organ in your abdomen, or from outside of your digestive system. Always seek medical care if your abdominal pain is unexplained, persistent or severe.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="stomachAche-cau-ss" data-bs-toggle="collapse" data-bs-target="#stomachAche-cau" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="stomachAche-cau">
+                            <div class="card card-body">
+                                <p>There are numerous reasons for abdominal pain. It may be related to digestion, injury, infection or disease. It may come from an organ inside, or from the muscles or skin in your abdominal wall. Or it may have spread from somewhere else nearby. Your healthcare provider will ask you detailed questions about your pain to determine the cause. How bad it feels doesn’t necessarily indicate how serious it is. Some common, transient conditions can be intense, and some life-threatening conditions may feel mild.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="stomachAche-sym-ss" data-bs-toggle="collapse" data-bs-target="#stomachAche-sym" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="stomachAche-sym">
+                            <div class="card card-body">
+                                <p>Call your doctor if you have severe stomach pain, sharp stomach pain, if your stomach pain does not improve in 24 to 48 hours or if you also have:</p>
+                                <ul>
+                                    <li>Chest pain (get prompt medical attention)</li>
+                                    <li>Bloating or swelling that lasts more than a few days</li>
+                                    <li>An injury or recent accident</li>
+                                    <li>Bloody or dark stools</li>
+                                    <li>Vomiting blood or dark material</li>
+                                    <li>Changes in bowel habits</li>
+                                    <li>Unexpected weight loss</li>
+                                    <li>Difficulty swallowing</li>
+                                    <li>Diarrhea for more than five days</li>
+                                    <li>Prolonged vaginal bleeding</li>
+                                    <li>Fever over 100 degrees</li>
+                                    <li>Burning sensation when you urinate or frequent urination</li>
+                                    <p>Any of these additional conditions could indicate a more serious underlying cause that requires medical treatment.
+                                    </p>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="stomachAche-tre-ss" data-bs-toggle="collapse" data-bs-target="#stomachAche-tre" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="stomachAche-tre">
+                            <div class="card card-body">
+                                <p>Abdominal pain has a wide variety of causes and treatments. Some conditions, such as gallstones or appendicitis, may require surgery. Others, such as ulcers or infections, may be relieved with medicine. And sometimes you may just have to get through a bout of stomach flu or a kidney stone until it passes. If you don’t know what’s causing your abdominal pain, it’s important to find out, especially if it doesn’t go away on its own. Remember that even mild cases can be serious. However, if you have a pretty good idea that your stomachache is related to digestion, you can begin by treating yourself with:</p>
+                                <ul>
+                                    <li>Bowel rest. Stop eating, or only eat easy-to-digest foods like crackers or bananas</li>
+                                    <li>Hydration. Drink plenty of water or a hydration formula</li>
+                                    <li>Heat therapy. Try a warm water bottle or a soak in the bath</li>
+                                    <li>Home remedies. Try licorice for gas, ginger for indigestion, or peppermint to help relax your intestinal muscles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Allergic Rhinitis-->
+                    <div class="section" id="allergy">
+                        <h1>Allergic Rhinitis</h1>
+                        <button class="btn justify-content-between d-flex" id="allergy-def-ss" data-bs-toggle="collapse" data-bs-target="#allergy-def" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="allergy-def">
+                            <div class="card card-body">
+                                <p>Hay fever, also called allergic rhinitis, causes cold-like symptoms. Allergic rhinitis (hay fever) is an allergic reaction to tiny particles in the air called allergens. When you breathe in allergens through your nose or mouth, your body reacts by releasing a natural chemical called histamine. Despite being called hay fever, hay doesn’t cause hay fever and most people don’t get a fever. Allergic rhinitis is where your nose gets irritated by something you're allergic to, such as pollen, causing sneezing and other symptoms. For most people it's easy to treat with medicines from a pharmacist.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="allergy-cau-ss" data-bs-toggle="collapse" data-bs-target="#allergy-cau" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="allergy-cau">
+                            <div class="card card-body">
+                                <p>Allergic rhinitis occurs when your body’s immune system reacts to an irritant in the air. The irritants (allergens) are so tiny that you can easily inhale them through your nose or mouth. Allergens are harmless to most people. But if you have hay fever, your immune system thinks the allergen is intruding. Your immune system tries to protect your body by releasing natural chemicals into your bloodstream. The main chemical is called histamine. It causes mucous membranes in your nose, eyes and throat to become inflamed and itchy as they work to eject the allergen from your body.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="allergy-sym-ss" data-bs-toggle="collapse" data-bs-target="#allergy-sym" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="allergy-sym">
+                            <div class="card card-body">
+                                <p>Hay fever symptoms can appear throughout the year. Outdoor allergies are worse in the spring, summer and early fall depending on where you live. In warm weather, weeds and flowers bloom, and pollen counts are higher. Indoor allergies, such as those from pets and dust mites, can get worse in winter because people spend more time indoors with their windows closed. Hay fever symptoms can include:</p>
+                                <ul>
+                                    <li>Runny nose and nasal stuffiness (congestion)</li>
+                                    <li>Watery, itchy, red eyes (allergic conjunctivitis)</li>
+                                    <li>Sneezing</li>
+                                    <li>Cough</li>
+                                    <li>Itchy nose, roof of mouth or throat</li>
+                                    <li>Mucus that runs down the back of your throat (postnasal drip)</li>
+                                    <li>Swollen, bruised-appearing skin under the eyes (allergic shiners)</li>
+                                    <li>Extreme tiredness (fatigue), often due to poor sleep</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="allergy-tre-ss" data-bs-toggle="collapse" data-bs-target="#allergy-tre" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="allergy-tre">
+                            <div class="card card-body">
+                                <p>Several allergy medications can improve symptoms and help you live with hay fever. These treatments come in many forms, including liquids, pills, eye drops, nasal sprays and injections. Talk to your provider before taking any medication, especially if you’re pregnant or have other health concerns.</p>
+                                <ul>
+                                    <li>Antihistamines</li>
+                                    <li>Decongestants</li>
+                                    <li>Corticosteroid nasal sprays</li>
+                                    <li>Leukotriene inhibitors</li>
+                                    <li>Immunotherapy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Cough-->
+                    <div class="section" id="cough">
+                        <h1>Cough</h1>
+                        <button class="btn justify-content-between d-flex" id="cough-def-ss" data-bs-toggle="collapse" data-bs-target="#cough-def" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="cough-def">
+                            <div class="card card-body">
+                                <p>Coughing is an important way to keep your throat and airways clear. But too much coughing may mean you have a disease or disorder. A cough is your body's way of responding when something irritates your throat or airways. An irritant stimulates nerves that send a message to your brain. The brain then tells muscles in your chest and abdomen to push air out of your lungs to force out the irritant. An occasional cough is normal and healthy. A cough that persists for several weeks or one that brings up discolored or bloody mucus may indicate a condition that needs medical attention. At times, coughing can be very forceful. Prolonged, vigorous coughing can irritate the lungs and cause even more coughing. It is also exhausting and can cause sleeplessness, dizziness or fainting, headaches, urinary incontinence, vomiting, and even broken ribs.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="cough-cau-ss" data-bs-toggle="collapse" data-bs-target="#cough-cau" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="cough-cau">
+                            <div class="card card-body">
+                                <p>Common causes of coughing are:</p>
+                                <ul>
+                                    <li>Allergies that involve the nose or sinuses</li>
+                                    <li>Asthma and COPD (emphysema or chronic bronchitis)</li>
+                                    <li>The common cold, flu, and other viral infections</li>
+                                    <li>Lung infections such as pneumonia or acute bronchitis</li>
+                                    <li>Sinusitis with postnasal drip</li>
+                                    <li>Gastroesophageal reflux disease (GERD)</li>
+                                    <li>Cigarette smoking or exposure to secondhand smoke (or smoking other substances like marijuana)(GERD)</li>
+                                    <li>Lung cancer</li>
+                                    <li>Lung disease such as bronchiectasis, cystic fibrosis, or interstitial lung disease</li>
+                                    <li>Sometimes no specific cause is found</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="cough-sym-ss" data-bs-toggle="collapse" data-bs-target="#cough-sym" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="cough-sym">
+                            <div class="card card-body">
+                                <p>Coughs can be either acute or chronic. Acute coughs begin suddenly and usually last for less than three weeks. Chronic coughs last longer than eight weeks (or longer than four weeks in children). (1) A chronic cough can wake you up at night when you’re sleeping and lead to fatigue. (5) It can also occur with other signs and symptoms, including:</p>
+                                <ul>
+                                    <li>A runny or stuffy nose</li>
+                                    <li>A feeling of liquid running down the back of your throat (postnasal drip)</li>
+                                    <li>Frequent throat clearing and sore throat</li>
+                                    <li>Hoarseness</li>
+                                    <li>Wheezing and shortness of breath</li>
+                                    <li>Heartburn or a sour taste in your mouth</li>
+                                    <li>Rarely, coughing up blood</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="cough-tre-ss" data-bs-toggle="collapse" data-bs-target="#cough-tre" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="cough-tre">
+                            <div class="card card-body">
+                                <p>Treating a cough will depend on what is causing the cough. If you have an infection, your healthcare provider might prescribe some type of antibiotic or antiviral medication, but most viral coughs do not require antiviral medications. For GERD, they might suggest diet changes or prescribe a proton pump inhibitor or an H2 blocker. Water can be good for a cough. Drinking it can help ease a cough from throat irritation or dryness. Adding it to the air with a vaporizer or a steamy shower are other ways water relieves a cough. You shouldn’t give cough medicines to your child if they’re under 6 years of age without the approval of their healthcare provider.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Nausea-->
+                    <div class="section" id="nausea">
+                        <h1>Nausea</h1>
+                        <button class="btn justify-content-between d-flex" id="nausea-def-ss" data-bs-toggle="collapse" data-bs-target="#nausea-def" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="nausea-def">
+                            <div class="card card-body">
+                                <p>When you feel like you might throw up, that's nausea. I know you're feeling sea sick, but if our boat sinks, nausea will be the least of your problems. Nausea gets its root from the Greek word for ship, naus, so it might have originally meant sea sickness in particular. Remembering this origin might help you spell nausea correctly too, since it ends with “sea.” But nausea can strike on dry land just as well, from eating the wrong thing, catching the flu, reading on a moving bus...just thinking of it all makes me sick to my stomach. Nausea is stomach discomfort and the sensation of wanting to vomit. It can be a precursor to vomiting the contents of the stomach.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="nausea-cau-ss" data-bs-toggle="collapse" data-bs-target="#nausea-cau" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="nausea-cau">
+                            <div class="card card-body">
+                                <p>Nausea can stem from a variety of causes. Some people are highly sensitive to motion or to certain foods, medications, or the effects of certain medical conditions. All these things can cause nausea. Heartburn or gastroesophageal reflux disease (GERD) can cause your stomach’s contents to move back up your esophagus when you eat. This creates a burning sensation that causes nausea. Bacteria or viruses can affect the stomach and lead to nausea. Foodborne bacteria can cause an illness known as food poisoning. Viral infections can also cause nausea. Overeating or eating certain foods, such as spicy or high-fat foods, can upset the stomach and cause nausea. Eating foods you’re allergic to can also cause nausea.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="nausea-sym-ss" data-bs-toggle="collapse" data-bs-target="#nausea-sym" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="nausea-sym">
+                            <div class="card card-body">
+                                <p>Nausea symptoms are quite common in adults and children. It indicates a bodily issue and frequently leads to vomiting. Nausea itself is a symptom, but there are other symptoms associated with it, including:</p>
+                                <ul>
+                                    <li>Vomiting or feeling like you are about to vomit
+                                    </li>
+                                    <li>Lack of appetite
+                                    </li>
+                                    <li>Excess saliva in the mouth
+                                    </li>
+                                    <li>Sweating
+                                    </li>
+                                    <li>Retching, or repeated, uncontrollable contractions of abdominal and respiratory muscles
+                                    </li>
+                                    <li>Stomach ache
+                                    </li>
+                                    <li>An uneasy feeling in the back of your throat, chest, or upper abdomen
+                                    </li>
+                                    <li>Fatigue
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="nausea-tre-ss" data-bs-toggle="collapse" data-bs-target="#nausea-tre" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="nausea-tre">
+                            <div class="card card-body">
+                                <p>What helps with nausea is different for every person, but there are several things you can try to control or relieve it. At-home nausea remedies may include:</p>
+                                <ul>
+                                    <li>Drinking clear and/or ice-cold drinks</li>
+                                    <li>Eating light, bland foods (such as saltine crackers or plain bread)</li>
+                                    <li>Avoiding fried, greasy or sweet foods</li>
+                                    <li>Eating slowly and eating smaller, more frequent meals</li>
+                                    <li>Not mixing hot and cold foods</li>
+                                    <li>Drinking beverages slowly</li>
+                                    <li>Avoiding activity after eating</li>
+                                    <li>Avoiding brushing your teeth after eating</li>
+                                    <li>Choosing foods from all the food groups as you can tolerate them to get adequate nutrition</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Sinusitis-->
+                    <div class="section" id="sinusitis">
+                        <h1>Sinusitis</h1>
+                        <button class="btn justify-content-between d-flex" id="sinusitis-def-ss" type="button" data-bs-toggle="collapse" data-bs-target="#sinusitis-def" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="sinusitis-def">
+                            <div class="card card-body">
+                                <p>Sinusitis is present when the tissue lining the sinuses become swollen or inflamed. It occurs as the result of an inflammatory reaction or an infection from a virus, bacteria, or fungus. Sinusitis is an inflammation of the tissues in your sinuses (spaces in your forehead, cheeks and nose usually filled with air). It causes facial pain, a stuffy or runny nose, and sometimes a fever and other symptoms. It’s usually caused by the common cold, but other viruses, bacteria, fungi and allergies can also cause sinusitis.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="sinusitis-cau-ss" type="button" data-bs-toggle="collapse" data-bs-target="#sinusitis-cau" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="sinusitis-cau">
+                            <div class="card card-body">
+                                <p>The sinuses are air-filled spaces in the skull. They are located behind the forehead, nasal bones, cheeks, and eyes. Healthy sinuses contain no bacteria or other germs. Most of the time, mucus is able to drain out and air is able to flow through the sinuses.
+                                    When the sinus openings become blocked or too much mucus builds up, bacteria and other germs can grow more easily. Sinusitis can occur from one of these conditions:
+                                </p>
+                                <ul>
+                                    <li>Small hairs (cilia) in the sinuses fail to properly move mucus out. This may be due to some medical conditions</li>
+                                    <li>Colds and allergies may cause too much mucus to be made or block the opening of the sinuses</li>
+                                    <li>A deviated nasal septum, nasal bone spur, or nasal polyps may block the opening of the sinuses</li>
+                                    <li>Chronic infection can cause mucosal swelling and inflammation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="sinusitis-sym-ss" data-bs-toggle="collapse" data-bs-target="#sinusitis-sym" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="sinusitis-sym">
+                            <div class="card card-body">
+                                <p>The symptoms of acute sinusitis in adults very often follow a cold that does not get better or that gets worse after 7 to 10 days. Symptoms include:
+                                </p>
+                                <ul>
+                                    <li>Cough, often worse at night</li>
+                                    <li>Fatigue and general feeling of being ill</li>
+                                    <li>Fever</li>
+                                    <li>Headache</li>
+                                    <li>Pressure-like pain, pain behind the eyes, toothache, or tenderness of the face</li>
+                                    <li>Nasal stuffiness and discharge</li>
+                                    <li>Sore throat and postnasal drip</li>
+                                    <li>Cold or respiratory illness that has been getting better and then begins to get worse</li>
+                                    <li>High fever, along with a darkened nasal discharge, that lasts for at least 3 days</li>
+                                    <li>Nasal discharge, with or without a cough, that has been present for more than 10 days and is not improving</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="sinusitis-tre-ss" type="button" data-bs-toggle="collapse" data-bs-target="#sinusitis-tre" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="sinusitis-tre">
+                            <div class="card card-body">
+                                <p>There are many treatment options for sinusitis, depending on your symptoms and how long you’ve had them. You can treat a sinus infection at home with:</p>
+                                <ul>
+                                    <li>Decongestants</li>
+                                    <li>Over-the-counter (OTC) cold and allergy medications</li>
+                                    <li>Nasal saline rinses</li>
+                                    <li>Drinking plenty of fluids</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Conjunctivitis (Pink eye)-->
+                    <div class="section" id="conjunctivitis">
+                        <h1>Conjunctivitis (Pink eye)</h1>
+                        <button class="btn justify-content-between d-flex" id="conjunctivitis-def-ss" type="button" data-bs-toggle="collapse" data-bs-target="#conjunctivitis-def" aria-expanded="false" aria-controls="collapseExample">
+                            Definition<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="conjunctivitis-def">
+                            <div class="card card-body">
+                                <p>Pink eye is an inflammation of the transparent membrane that lines the eyelid and eyeball. This membrane is called the conjunctiva. When small blood vessels in the conjunctiva become swollen and irritated, they're more visible. This is what can Pink eye is most often caused by a viral infection. It also can be caused by a bacterial infection, an allergic reaction or — in babies — an incompletely opened tear duct. Uses the whites of the eyes to appear reddish or pink. Pink eye also is called conjunctivitis. Though pink eye can be irritating, it rarely affects your vision. Treatments can help ease the discomfort of pink eye. Because pink eye can be contagious, getting an early diagnosis and taking certain precautions can help limit its spread.</p>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="conjunctivitis-cau-ss" type="button" data-bs-toggle="collapse" data-bs-target="#conjunctivitis-cau" aria-expanded="false" aria-controls="collapseExample">
+                            Causes<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="conjunctivitis-cau">
+                            <div class="card card-body">
+                                <p>Most cases of pink eye are caused by adenovirus but also can be caused by other viruses, including herpes simplex virus and varicella-zoster virus. Irritation from a chemical splash or foreign object in your eye also is associated with conjunctivitis. Sometimes flushing and cleaning the eye to wash out the chemical or object causes redness and irritation. Symptoms, which may include watery eyes and a mucous discharge, usually clear up on their own within about a day. Causes of pink eye include:</p>
+                                <ul>
+                                    <li>Viruses</li>
+                                    <li>Bacteria</li>
+                                    <li>Allergies</li>
+                                    <li>A chemical splash in the eye</li>
+                                    <li>A foreign object in the eye</li>
+                                    <li>In newborns, a blocked tear duct</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="conjunctivitis-sym-ss" data-bs-toggle="collapse" data-bs-target="#conjunctivitis-sym" aria-expanded="false" aria-controls="collapseExample">
+                            Symptoms<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="conjunctivitis-sym">
+                            <div class="card card-body">
+                                <p>The most common pink eye symptoms include:</p>
+                                <ul>
+                                    <li>Redness in one or both eyes</li>
+                                    <li>Itchiness in one or both eyes</li>
+                                    <li>A gritty feeling in one or both eyes</li>
+                                    <li>A discharge in one or both eyes that forms a crust during the night that may prevent your eye or eyes from opening in the morning</li>
+                                    <li>Tearing</li>
+                                    <li>Sensitivity to light, called photophobia</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <button class="btn justify-content-between d-flex" id="conjunctivitis-tre-ss" type="button" data-bs-toggle="collapse" data-bs-target="#conjunctivitis-tre" aria-expanded="false" aria-controls="collapseExample">
+                            Treatment<i class="bi bi-chevron-down ms-2"></i>
+                        </button>
+                        <div class="collapse show" id="conjunctivitis-tre">
+                            <div class="card card-body">
+                                <p>Pink eye treatment is usually focused on symptom relief. Your provider may recommend:</p>
+                                <ul>
+                                    <li>Using artificial tears</li>
+                                    <li>Cleaning your eyelids with a wet cloth</li>
+                                    <li>Applying cold or warm compresses several times daily</li>
+                                </ul>
+                                <p>If you wear contact lenses, you'll be advised to stop wearing them until treatment is complete. Your provider will likely recommend that you throw out soft contacts you've already worn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 scroll-spy-section">
+                    <button class="btn d-lg-none scroll-spy-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#scroll-spy"><i class="bi bi-search"></i></button>
+                    <div class="offcanvas-lg offcanvas offcanvas-end" id="scroll-spy">
+                        <div class="offcanvas-header d-flex justify-content-between align-items-center">
+                            <h1>Scroll Spy</h1>
+                            <button type="button" class="scroll-spy-toggler-in btn" data-bs-dismiss="offcanvas" data-bs-target="#scroll-spy"><i class="bi bi-x"></i></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <nav id="scrollSpy" class="scroll-spy scroll-spy-in h-100">
+                                <h5 class="text-light">On this page</h5>
+                                <nav class="nav flex-column">
+                                    <a class="nav-link" href="#commonCold">Common Cold</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#commonCold-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#commonCold-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#commonCold-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#commonCold-tre-ss">Treatment</a>
+                                    </nav>
+                                    <a class="nav-link" href="#flu">Flu (Influenza)</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#flu-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#flu-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#flu-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#flu-tre-ss">Treatment</a>
+                                    </nav>
+                                    <a class="nav-link" href="#headache">Headache</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#headache-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#headache-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#headache-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#headache-tre-ss">Treatment</a>
+                                    </nav>
+                                    <a class="nav-link" href="#soreThroat">Sore Throat</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#soreThroat-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#soreThroat-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#soreThroat-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#soreThroat-tre-ss">Treatment</a>
+                                    </nav>
+                                    <a class="nav-link" href="#stomachAche">Stomach Ache</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#stomachAche-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#stomachAche-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#stomachAche-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#stomachAche-tre-ss">Treatment</a>
+                                    </nav>
+                                    <a class="nav-link" href="#allergy">Allergic Rhinitis</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#allergy-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#allergy-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#allergy-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#allergy-tre-ss">Treatment</a>
+                                    </nav>
+                                    <a class="nav-link" href="#cough">Cough</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#cough-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#cough-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#cough-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#cough-tre-ss">Treatment</a>
+                                    </nav>
+                                    <a class="nav-link" href="#nausea">Nausea</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#nausea-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#nausea-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#nausea-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#nausea-tre-ss">Treatment</a>
+                                    </nav>
+                                    <a class="nav-link" href="#sinusitis">Sinusitis</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#sinusitis-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#sinusitis-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#sinusitis-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#sinusitis-tre-ss">Treatment</a>
+                                    </nav>
+                                    <a class="nav-link" href="#conjunctivitis">Conjunctivitis (Pink eye)</a>
+                                    <nav class="nav flex-column nested">
+                                        <a class="nav-link ms-3 my-1" href="#conjunctivitis-def-ss">Definition</a>
+                                        <a class="nav-link ms-3 my-1" href="#conjunctivitis-cau-ss">Causes</a>
+                                        <a class="nav-link ms-3 my-1" href="#conjunctivitis-sym-ss">Symptoms</a>
+                                        <a class="nav-link ms-3 my-1" href="#conjunctivitis-tre-ss">Treatment</a>
+                                    </nav>
+                                </nav>
+                            </nav>
+                        </div>
+                    </div>
+                    <nav id="scrollSpy" class="scroll-spy scroll-spy-out d-none d-lg-block">
+                        <h5 class="text-light">On this page</h5>
+                        <nav class="nav flex-column">
+                            <a class="nav-link" href="#commonCold">Common Cold</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#commonCold-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#commonCold-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#commonCold-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#commonCold-tre-ss">Treatment</a>
+                            </nav>
+                            <a class="nav-link" href="#flu">Flu (Influenza)</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#flu-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#flu-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#flu-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#flu-tre-ss">Treatment</a>
+                            </nav>
+                            <a class="nav-link" href="#headache">Headache</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#headache-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#headache-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#headache-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#headache-tre-ss">Treatment</a>
+                            </nav>
+                            <a class="nav-link" href="#soreThroat">Sore Throat</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#soreThroat-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#soreThroat-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#soreThroat-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#soreThroat-tre-ss">Treatment</a>
+                            </nav>
+                            <a class="nav-link" href="#stomachAche">Stomach Ache</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#stomachAche-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#stomachAche-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#stomachAche-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#stomachAche-tre-ss">Treatment</a>
+                            </nav>
+                            <a class="nav-link" href="#allergy">Allergic Rhinitis</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#allergy-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#allergy-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#allergy-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#allergy-tre-ss">Treatment</a>
+                            </nav>
+                            <a class="nav-link" href="#cough">Cough</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#cough-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#cough-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#cough-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#cough-tre-ss">Treatment</a>
+                            </nav>
+                            <a class="nav-link" href="#nausea">Nausea</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#nausea-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#nausea-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#nausea-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#nausea-tre-ss">Treatment</a>
+                            </nav>
+                            <a class="nav-link" href="#sinusitis">Sinusitis</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#sinusitis-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#sinusitis-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#sinusitis-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#sinusitis-tre-ss">Treatment</a>
+                            </nav>
+                            <a class="nav-link" href="#conjunctivitis">Conjunctivitis (Pink eye)</a>
+                            <nav class="nav flex-column nested">
+                                <a class="nav-link ms-3 my-1" href="#conjunctivitis-def-ss">Definition</a>
+                                <a class="nav-link ms-3 my-1" href="#conjunctivitis-cau-ss">Causes</a>
+                                <a class="nav-link ms-3 my-1" href="#conjunctivitis-sym-ss">Symptoms</a>
+                                <a class="nav-link ms-3 my-1" href="#conjunctivitis-tre-ss">Treatment</a>
+                            </nav>
+                        </nav>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer Section-->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#2e797e" fill-opacity="0.9" d="M0,128L48,122.7C96,117,192,107,288,112C384,117,480,139,576,165.3C672,192,768,224,864,218.7C960,213,1056,171,1152,154.7C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    <!-- Footer Section -->
+    <footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="inner-container">
+                <!-- Brand and Logo -->
+                <div class="section">
+                    <a href="#" class="d-inline-block mb-3">
+                        <img src="../assets/logo-lg.png" alt="fileFailedToLoad" class="img-fluid" style="max-height: 60px;">
+                    </a>
+                    <p>Your trusted partner in healthcare industry.</p>
+                    <form action="#" class="comment" onsubmit="window.alert('Thank you for your feedback!');">
+                        <legend class="text-light">Leave a quick comment!</legend>
+                        <div class="d-flex">
+                            <input type="text" class="form-control" required>
+                            <button type="submit" class="btn white-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <hr class="hr">
+
+                <!-- Contact Us -->
+                <div class="section contact-section">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> <div>622 3rd Ave SW Pipestone, Minnesota(MN), 56164</div></li>
+                        <li><i class="bi bi-telephone"></i> <div>95 9792423544<br>95 9752277811</div></li>
+                        <li><i class="bi bi-envelope"></i> <div class="w-auto">cphcare.global@gmail.com</div></li>
+                     </ul>
+                </div>
+                <hr class="hr">
+
+                <!-- Quick Links -->
+                <div class="section">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../home/">Home</a></li>
+                        <li><a href="#servicesDropdown" data-bs-toggle="collapse">Services</a></li>
+                            <ul class="collapse ms-md-3 ms-0" id="servicesDropdown">
+                                <li class="mb-0"><a href="../telehealth-services/">Telehealth Services</a></li>
+                                <li class="mb-0"><a href="../appointment/">Online Appointments</a></li>
+                                <li class="mb-0"><a href="../major-healthcare-services/">Major Healthcare Services</a></li>
+                                <li><a href="../services/">See All...</a></li>
+                            </ul>
+                        <li><a href="#illnessDropdown" data-bs-toggle="collapse">Common Illness</a></li>
+                            <ul class="collapse ms-md-3 ms-0" id="illnessDropdown">
+                                <li class="mb-0"><a href="../common-illness/#commonCold">Common Cold</a></li>
+                                <li class="mb-0"><a href="../common-illness/#flu">Influenza</a></li>
+                                <li class="mb-0"><a href="../common-illness/#headache">Headache</a></li>
+                                <li class="mb-0"><a href="../common-illness/#soreThroat">Sore Throat</a></li>
+                                <li><a href="../common-illness/#stomachAche">Stomach Ache</a></li>
+                                <li><a href="../common-illness/">See More...</a></li>
+                            </ul>
+                        <li><a href="../about-us/">About Us</a></li>
+                        <li><a href="../contact/">Contact</a></li>
+                        <li><a href="../references/">References</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="col-md-12">
+            </div>
+            <hr>
+            <div class="col-md-12 text-center">
+                <p>&#169; Copyright 2024 www.cphcare.com. All rights reserved. Developed by CPHCare.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="../js/firebase-module.js "></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>
