@@ -146,7 +146,7 @@ function validateName(value){
 function validateSubject(value){
     if (value.length == " "){
         subjectErr.innerHTML = "Appointment subject is required.";
-        subjectC.setAttribute('style', 'margin-bottom: 40px;');
+        subjectC.setAttribute('style', 'margin-bottom: 40px!important;');
         return false;
     }
     subjectErr.innerHTML = "";
