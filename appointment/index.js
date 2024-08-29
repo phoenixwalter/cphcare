@@ -68,7 +68,7 @@ function showCalendar(){
 
     dates.forEach(function(date){
         date.addEventListener("click", function(){
-            if (this.innerHTML <= currentDate.getDate() && currentMonth <= currentDate.getMonth()){
+            if (this.innerHTML <= currentDate.getDate() && currentMonth <= currentDate.getMonth()+1){
                 document.getElementById("calendar-alert").style.display = "inline-block";
                 setTimeout(() => document.getElementById("calendar-alert").style.display = "none", 10000);
             }
