@@ -1,0 +1,341 @@
+body{
+    margin: 0;
+    padding: 0;
+    padding-top: 100px;
+    background-image: url(../assets/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+*{
+    font-family: "Ubuntu", sans-serif;
+}
+.calendar-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.calendar-container{
+    position: relative;
+}
+.calendar{
+    width: 100%;
+    background-color: rgba(3, 176, 130, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+}
+.calendar header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(3, 176, 130, 0.4);
+    border-radius: 20px;
+}
+.calendar header *{
+    color: rgb(161, 255, 217);
+    font-weight: 700;
+}
+.calendar header .header{margin: 0;}
+.calendar .buttons button{
+    background-color: rgba(22, 175, 134, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.calendar .buttons{
+    display: flex;
+}
+.calendar ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 0;
+}
+.calendar ul li{
+    width: calc(100% / 7);
+}
+.calendar .calendarDays{
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: rgb(161, 255, 217);
+}
+.calendar .calendarDates{
+    margin-bottom: 0px;
+}
+.calendar .calendarDates li{
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    color: rgb(161, 255, 217);
+    font-weight: 500;
+}
+.calendar .calendarDates li.disabled{
+    color: rgb(48, 164, 143);
+    cursor: default;
+}
+.calendar .calendarDates li.today{
+    color: rgb(255, 255, 255);
+}
+.calendar .calendarDates li.today::before{
+    background-color: rgb(12, 206, 138);
+}
+.calendar .calendarDates li::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+}
+.calendar .calendarDates li:hover::before{
+    background-color: rgba(161, 255, 217, 0.15);
+}
+.calendar .calendarDates li:active::before{
+    background-color: rgba(161, 255, 217, 0.07);
+    transition: none;
+}
+.calendar .calendarDates li.disabled::before{
+    opacity: 0;
+}
+.calendar .calendarDates li.selected::before{
+    background-color: rgba(161, 255, 217, 0.5);
+}
+
+.appointment, .question, .appointment-sm, .question-sm{
+    background-color: rgba(3, 176, 130, 1);
+    color: rgb(255, 255, 255);
+    border: none!important;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.5;
+}
+.appointment, .question{
+    width: 45px!important;
+    height: 45px!important;
+    position: absolute;
+    top: 27px;
+    left: 100%;
+    translate: 20px 0px;
+    height: auto;
+    border-radius: 50%;
+}
+.question{
+    top: 45px;
+    translate: 20px 100%;
+}
+.appointment:hover, .question:hover, .appointment-sm:hover, .question-sm:hover{
+    background-color: rgb(48, 184, 148);
+    transform: scale(1.1);
+    color: white;
+}
+.appointment:active, .question:active, .appointment-sm:active, .question-sm:active{
+    background-color: rgb(48, 184, 148)!important;
+    transform: scale(1);
+    color: white!important;
+    transition: none;
+}
+.appointment i, .question i{
+    font-size: 20px;
+}
+.calendar-section .button-sm-container{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0px 20px;
+}
+.calendar-section .button-sm-container button{
+    padding: 10px;
+}
+.calendar-section .alert{
+    background-color: rgba(255, 31, 31, 0.5);
+    border-color: rgba(255, 103, 103, 1);
+    backdrop-filter: blur(5px);
+    color: rgb(255, 153, 153);
+    
+    display: none;
+}
+@media only screen and (max-width: 991px){
+    .appointment, .question{
+        display: none;
+    }
+    .calendar-section .button-sm-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .calendar-section .button-sm-container .appointment-sm{
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width: 767px){
+    .appointment-form.data p{
+        font-size: 13px;
+    }
+    .calendar .calendarDates li{
+        font-size: 13px;
+    }
+}
+
+/*modal style*/
+.appointment-form .modal-content{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(20, 201, 203, 0.2)!important;
+    backdrop-filter: blur(15px);
+    border: none;
+}
+.appointment-form .modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: none;
+}
+.appointment-form .modal-footer{
+    border-top: none!important;
+}
+.appointment-form h1, .appointment-form p{
+    color: white;
+    margin-bottom: 0!important;
+}
+.appointment-form h1{
+    font-size: 23px;
+}
+.appointment-form hr{
+    border-color: white;
+    border-width: 2px;
+}
+/* form design */
+.appointment-form form{
+    padding: 10px 5%;
+}
+.appointment-form form label{
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+.appointment-form form .form-check label{
+    background-color: transparent;
+}
+.appointment-form form .form-check input{
+    box-shadow: none!important;
+    border: none;
+}
+.appointment-form .form-check-input:checked{
+    background-color: rgb(23, 179, 88) !important;
+    border: 0;
+}
+.appointment-form form .form-control, .appointment-form form select{
+    background-color: rgba(0, 0, 0, 0.15)!important;
+    color: white!important;
+    border: 1px solid white!important;
+    border-start-end-radius: 7px!important;
+    border-end-end-radius: 7px!important;
+}
+.appointment-form form .form-control:focus{
+    box-shadow: none;
+    border-color: rgb(20, 203, 142)!important;
+}
+.appointment-form form select:focus{
+    box-shadow: none!important;
+    border-color: rgb(20, 203, 142);
+}
+.appointment-form form .select-arrow{
+    color: white;
+    position: absolute;
+    right: 13px; top: 50%;
+    transform: translateY(-50%);
+}
+.appointment-form form .form-control::placeholder{
+    color: rgba(255, 255, 255, 0.75);
+}
+.appointment-form form option{
+    background-color:rgb(26, 182, 119)!important;
+}
+.appointment-form form .submit-btn{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white!important;
+
+    transition-property: all;
+    transition-timing-function: ease;
+}
+.appointment-form form .submit-btn:hover{
+    scale: 1.07;
+    background-color: rgba(255, 255, 255, 0.11);
+}
+.appointment-form form .submit-btn:active{
+    scale: 0.95;
+    background-color: transparent;
+    transition: none;
+}
+.appointment-form .form-err{
+    color: white;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    font-size: 13px;
+    background-color: rgb(255, 94, 94);
+    padding: 0px 5px;
+    border-radius: 10px!important;
+}
+.appointment-form .p-rel .form-err{
+    top: 28px;
+}
+#appointment-doc-c, #appointment-type-c{
+    margin-bottom: 40px!important;
+}
+.form-err.yellow{
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+.appointment-form .p-rel{
+    position: relative;
+}
+.note{
+    background-color: rgba(255, 242, 0, 0.2);
+    border: 1px solid rgba(255, 228, 118, 0.5);
+    color: rgb(255, 228, 118);
+    font-size: 13px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.warning{
+    background-color: rgba(255, 43, 43, 0.2);
+    border: 1px solid rgba(255, 104, 104, 0.5);
+    color: rgb(255, 134, 134);
+    font-size: 13px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.appointment-form.data p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(0, 134, 109, 0.6);
+}
+.appointment-form.data .data-container{
+    border-radius: 20px;
+    overflow: hidden;
+}
+.appointment-form.data p:nth-child(even){
+    background-color: rgba(255, 255, 255, 0.05);
+}
