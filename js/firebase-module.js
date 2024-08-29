@@ -299,8 +299,8 @@ document.getElementById("send-message").addEventListener('click', (e) => {
             });
             let chat = document.getElementById("message-container");
             chat.scrollTop = chat.scrollHeight;
-            setTimeout(() => document.getElementById("msg-input").value = '', 100);
-            setTimeout(renderMessages, 100);        
+            setTimeout(() => document.getElementById("msg-input").value = '', 1000);
+            setTimeout(renderMessages, 1000);        
         }
     }
     // fix = update the whole user object
